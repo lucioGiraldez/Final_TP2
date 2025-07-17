@@ -1,0 +1,48 @@
+### CON VALIDACION DE PRECIO NEGATIVO
+POST http://127.0.0.1:3006/api/v1/productos
+Content-Type: application/json
+
+{
+"product": {
+    "name": "Reloj Smart Puma ultra light x3/ae44",
+    "price": -80.800,
+    "stock": -5
+    }
+}
+
+### FUNCIONAL
+POST http://127.0.0.1:3006/api/v1/productos
+Content-Type: application/json
+
+{
+"product": {
+    "name": "Reloj Smart Puma ultra light x3/ae44",
+    "price": 80.800,
+    "stock": 5
+    }
+}
+
+### CON VALIDACION DE STOCK NEGATIVO
+PUT http://localhost:3006/api/v1/productos/fd4a4461-4784-4470-bc04-5383277b0fa4/updateStock
+Content-Type: application/json
+
+{
+  "stock": -2
+}
+
+### FUNCIONAL
+PUT http://localhost:3006/api/v1/productos/fd4a4461-4784-4470-bc04-5383277b0fa4/updateStock
+Content-Type: application/json
+
+{
+  "stock": 27
+}
+
+###
+GET http://127.0.0.1:3006/api/v1/productos/fd4a4461-4784-4470-bc04-5383277b0fa4
+
+###
+GET http://127.0.0.1:3006/api/v1/productos
+
+###
+DELETE http://127.0.0.1:3006/api/v1/productos/fd4a4461-4784-4470-bc04-5383277b0fa4
